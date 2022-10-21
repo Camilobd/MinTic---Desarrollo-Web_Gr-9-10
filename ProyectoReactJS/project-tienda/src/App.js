@@ -11,8 +11,7 @@ function App() {
   return (
     <>
       <SeccionHeader />
-      <FormularioLogin/>
-      
+      <FormularioLogin/>     
 
     </>
 
