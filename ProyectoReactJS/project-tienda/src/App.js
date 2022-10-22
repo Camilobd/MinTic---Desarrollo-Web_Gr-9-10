@@ -4,6 +4,7 @@ import './App.css';
 //importaciones con los componentes que voy a crear
 import { SeccionHeader } from "./seccionHeader";
 import { FormularioLogin } from "./seccionLogin";
+import { TablaDatos } from "./SeccionTabla";
 //import { SeccionInfo } from "./seccionInfo";
 //import { FormularioBienvenida } from "./seccionFormulario";
 
@@ -11,7 +12,8 @@ function App() {
   return (
     <>
       <SeccionHeader />
-      <FormularioLogin/>     
+      <FormularioLogin/>
+      <TablaDatos/>     
 
     </>
 
