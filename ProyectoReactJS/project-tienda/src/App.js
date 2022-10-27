@@ -1,19 +1,31 @@
 import './App.css';
-////import { Fragment } from 'react';
+import { Login } from "./Componentes/login.js";
+import { ListaProductosUsuario } from "./Componentes/userListaProductos.js";
+import { CarritoCompras } from "./Componentes/userCarrito.js";
+import { CrearUsuarios } from "./Componentes/AdminCrearUsuarios.js";
+import { CrearProdcutos } from "./Componentes/AdminCrearProductos.js";
+import { ListaProductosAdmin } from "./Componentes/AdminListaProductos";
+import { ListaVentas } from "./Componentes/AdminListaVentas";
 
-//importaciones con los componentes que voy a crear
-import { SeccionHeader } from "./Components/seccionHeader.js";
-import { FormularioLogin } from "./Components/seccionLogin.js";
-import { TablaDatos } from "./Components/SeccionTabla.js";
-//import { SeccionInfo } from "./seccionInfo";
-//import { FormularioBienvenida } from "./seccionFormulario";
 
 function App() {
   return (
     <>
-      <SeccionHeader />
-      <FormularioLogin/>
-      <TablaDatos/>     
+      
+      <Login/>
+      <br></br>
+      <ListaProductosUsuario/>
+      <br></br>
+      <CarritoCompras/>
+      <br></br>
+      <CrearUsuarios/>
+      <br></br>
+      <CrearProdcutos/>
+      <br></br>
+      <ListaProductosAdmin/>
+      <br></br>
+      <ListaVentas/>
+          
 
     </>
 

@@ -1,24 +1,25 @@
 import { Component } from "react";
-import '../styles/StyleTabla.css';
 
-var heading = ['Usuario', 'Contraseña', 'Edad'];
 
-//var heading = conexion a un BD NOsq o sql o un arcgivo plano
+var heading = ['Id Producto', 'Nombre Producto','Descripcion Producto', 'Valor Unitario'];
+
+//var body = conexion a un BD NOsq o sql o un arcgivo plano
 
 var body =
     [
-    ['camilo.bohorquez', 'qwe123asd', '36'],
-    ['jua.perez', 'zxc456fgh', '40'],
-    ['jose.arias', 'mnbkjhiuy876', '56'],
+    ['PI-0001', 'Guantes', 'Unidades dependiendo de tallas','36'],
+    ['PI-0002', 'Barrilla', 'TAmaños de 6 metros y define las pulagas','40'],
+    ['PI-0003', 'Brea','Brea sintetica por 6 kg', '56'],
  
     ];
 
 
-export function TablaDatos() {
+export function ListaVentas() {
 
     return (
         <>
             <br></br>
+            <h3>ListaVentas</h3>
             <div >
                 <Table heading={heading} body={body} />
             </div>

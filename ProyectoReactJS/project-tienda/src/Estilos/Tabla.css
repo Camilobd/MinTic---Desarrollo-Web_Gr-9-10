@@ -1,3 +1,10 @@
+#TablaCarrito{
+    background-color: rgb(109, 109, 211);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    width: 800px;
+    
+}
+
 .datagrid table {
   border-collapse: collapse;
   text-align: left;
