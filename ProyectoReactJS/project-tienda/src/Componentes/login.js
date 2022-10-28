@@ -1,15 +1,18 @@
 import { Fragment } from "react";
 import { useState } from "react";
+import JsonData from "../data/UsuariosEjemplo.json";
 
 
 
 import '../Estilos/Login.css';
 
+
 export function Login() {
 
     const [data, setDate] = useState({
         user: "",
-        pass: ""
+        pass: "",
+        data: ""
     }
     )
 
@@ -29,11 +32,12 @@ export function Login() {
                     <br></br>
                     <br></br>
                     <label>Contraseña
-                        <input type="Pass" onChange={(e) => {
+                        <input type="pass" onChange={(e) => {
                             setDate({ ...data, pass: e.target.value })
+                            
                         }
-                        }>
-                        </input>
+                        
+                        } ></input>
                     </label>
                     <br></br>
                     <br></br>
@@ -46,17 +50,37 @@ export function Login() {
 
     );
 
+    function Validacion(usuarioNombre, contrasena) {
+
+        var decision = false;
+        var datos = JsonData;
+
+        
+
+
+        for (const usuario of datos) {
+            
+            if (usuarioNombre === usuario.user && contrasena === usuario.pass) {
+                console.log("entro")
+                decision = true;
+            } 
+        }
+        return decision;
+    }
+
     function VerInfo() {
 
-        ///alert("email escrito"+data.email);
-        var userMongo = "camilo.bohorquez@mintic.gov.co";
-        var passMongo = 1098;
-
         // eslint-disable-next-line eqeqeq
-        if (userMongo === data.user && passMongo == data.pass) {
+
+        console.log(Validacion(data.user, data.pass))
+        if (Validacion(data.user, data.pass)) {
             alert("El usuario ingresado es correcto")
         } else {
             alert("Por favor verifique los datos ingresados")
         }
     }
 }
+
+
+
+
