@@ -25,8 +25,7 @@ export function ListaUsuarios(){
                     <th>Rol</th>
                     </tr>
                 </thead>
-                <tbody>
-                 
+                <tbody> 
                     
                     {DisplayData}
                     

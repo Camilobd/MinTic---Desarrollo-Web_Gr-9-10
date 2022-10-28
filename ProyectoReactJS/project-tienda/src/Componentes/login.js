@@ -2,8 +2,6 @@ import { Fragment } from "react";
 import { useState } from "react";
 import JsonData from "../data/UsuariosEjemplo.json";
 
-
-
 import '../Estilos/Login.css';
 
 
@@ -12,7 +10,7 @@ export function Login() {
     const [data, setDate] = useState({
         user: "",
         pass: "",
-        data: ""
+        date: ""
     }
     )
 
@@ -53,20 +51,18 @@ export function Login() {
     function Validacion(usuarioNombre, contrasena) {
 
         var decision = false;
-        var datos = JsonData;
-
-        
+        var datos = JsonData; //Integra o con express o con mongoDb   
 
 
-        for (const usuario of datos) {
-            
+        for (const usuario of datos) {            
             if (usuarioNombre === usuario.user && contrasena === usuario.pass) {
-                console.log("entro")
                 decision = true;
             } 
         }
         return decision;
     }
+
+    
 
     function VerInfo() {
 
