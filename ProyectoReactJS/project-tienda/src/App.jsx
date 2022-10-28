@@ -1,35 +1,22 @@
-import './App.css';
+import "bootstrap/dist/css/bootstrap.min.css";
+import React, { useState } from "react";
+import { BrowserRouter } from "react-router-dom";
 
-import { Login } from "./Componentes/login.js";
-import { ListaProductosUsuario } from "./Componentes/userListaProductos.js";
-import { CarritoCompras } from "./Componentes/userCarrito.js";
-import { CrearUsuarios } from "./Componentes/AdminCrearUsuarios.js";
-import { CrearProdcutos } from "./Componentes/AdminCrearProductos.js";
-import { ListaProductosAdmin } from "./Componentes/AdminListaProductos";
-import { ListaVentas } from "./Componentes/AdminListaVentas.js";
-import { ListaUsuarios } from "./Componentes/AdminListaUsuarios.js";
-
+import { Navegacion } from "./Componentes/Navegacion.js";
+import { MenuNavegacion } from "./Componentes/NavMenu";
 
 function App() {
+
+  const [rol, setRol] = useState('Otro')
+
   return (
     <>
-      
-      <Login/>
-      <br></br>
-      <ListaProductosUsuario/>
-      <br></br>
-      <CarritoCompras/>
-      <br></br>
-      <CrearUsuarios/>
-      <br></br>
-      <CrearProdcutos/>
-      <br></br>
-      <ListaProductosAdmin/>
-      <br></br>
-      <ListaVentas/>
-      <br></br>
-      <ListaUsuarios/>
-          
+      <BrowserRouter>
+
+        <MenuNavegacion rol={rol} />
+        <Navegacion rol={rol} />
+
+      </BrowserRouter>
 
     </>
 
