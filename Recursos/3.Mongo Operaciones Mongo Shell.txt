@@ -1,0 +1,47 @@
+mongodb://localhost:27017
+
+use TiendaIndustriales
+
+[]
+
+db.Usuarios.insertOne({ usuario: "camilobd", Contraseña: "123456789q", Rol:"SuperUsuario"})
+
+db.Ventas.insertOne({ Fecha: "28/10/2022", 
+					  Valor: "340000",
+					  Estado: "Carrito Compras",
+					  
+					  Productos: [{Producto:"Guantes",
+								   cant:"5",
+								   valorUni:"4500"
+								  },
+								  {Producto:"Pintura",
+								   cant:"10",
+								   valorUni:"70000"
+								  },
+								  {Producto:"Puntillas",
+								   cant:"1",
+								   valorUni:"7000"
+								  }									  
+					              ],
+					  
+					  Cliente:{ user:"Roberson"}
+})
+
+db.Ventas.find()
+
+db.Usuarios.find({usuario:'Oliver'})
+
+//Inventarios
+//Cambio de estado del carrito de compras
+
+db.Inventario.updateOne(
+   { nombre:"Guantes Industriales"},
+   {
+     $set: { stock: "20"},
+     $currentDate: { lastModified: true }
+   }
+)
+
+
+db.Inventario.find({nombre:"Guantes Industriales"})
+

@@ -14,7 +14,7 @@ import { ListaVentas } from "../Componentes/AdminListaVentas";
 export const Navegacion = ({ rol }) => {
   return (
     <Routes>
-      {rol === "Admin" ? (
+      {rol === "admin" ? (
         <Fragment>
           <Route path="/" element={<Login />} />
           <Route path="/CrearProductos" element={<CrearProdcutos />} />

@@ -7,7 +7,7 @@ import { MenuNavegacion } from "./Componentes/NavMenu";
 
 function App() {
 
-  const [rol, setRol] = useState('Otro')
+  const [rol, setRol] = useState('admin')
 
   return (
     <>
