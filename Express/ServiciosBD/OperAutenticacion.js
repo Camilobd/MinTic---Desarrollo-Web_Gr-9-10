@@ -1,0 +1,1 @@
+// get retorne o el rol, o el objeto completo o booleano de T o F
