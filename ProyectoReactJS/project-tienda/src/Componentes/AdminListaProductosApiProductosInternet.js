@@ -10,7 +10,7 @@ export const ListaProductosAdmin = () => {
 
 
     function getData() {
-        fetch("http://localhost:5000/ProductosStock")
+        fetch("https://api.escuelajs.co/api/v1/products")
             .then((resp) => resp.json())
             .then((resp) => {
                 return setDataProductos(resp)
@@ -38,11 +38,11 @@ export const ListaProductosAdmin = () => {
                     {dataProductos.map((Producto) => (
                         <tr key={Producto.id}>
                             <td>{Producto.id}</td>
-                            <td>{Producto.nombre}</td>
-                            <td>{Producto.descripcion}</td>
-                            <td>{Producto.stock}</td>
-                            <td>{Producto.valor}</td>
-                            <td><img src={Producto.imagen} width={100}></img></td>
+                            <td>{Producto.title}</td>
+                            <td>{Producto.description}</td>
+                            <td>{Producto.category.name}</td>
+                            <td>{Producto.price}</td>
+                            <td><img src={Producto.image} width={100}></img></td>
                             <td> <button>MODIFICAR PRODUCTOS</button> </td>
                         </tr>
                     ))}

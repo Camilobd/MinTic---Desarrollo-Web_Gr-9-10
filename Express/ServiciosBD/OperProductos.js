@@ -6,12 +6,17 @@ const BD = require("./Conexion/conn.js")
 const esquemaProductos = require("./Modelo/producto.js");
 const { updateOne } = require("./Modelo/producto.js");
 
+const CORS= require("Cors")// incluimos esta linea para controlar el acceso a puertos
+
 //Constates para usar express
 const port = 5000;
 const app = express();
+app.use(CORS());
+
 
 //conctar bd
 mongoose.connect(BD.mongoURL, { useNewUrlParser: true })
+
 
 app.listen(port, () => {
     console.log("Ejecuto la app en el puerto " + port)
@@ -22,7 +27,9 @@ app.listen(port, () => {
 app.get('/Productos', (req, res) => {
     esquemaProductos.find(function (err, esquemaProductos) {
         if (err) return console.err(err)
-        res.send(esquemaProductos);
+        
+        res.status(200).json(esquemaProductos);
+        //res.send(esquemaProductos);
     })
 
 })
@@ -54,3 +61,11 @@ app.put('/modificarStock', (req, res) => {
 })
 
 //put para actulziar los productos
+app.post('/modificarAll',( req , res ) =>{
+    const {id, nombre, stock, descripcion,valor, imagen}= req.body
+    console.log(id+" "+nombre+" "+stock+""+descripcion+""+valor+""+imagen);
+    estructProductos.update({id:"1"},{ nombre, stock, descripcion,valor, imagen}, function(err){
+        if (err) return console.error(err);
+       }) 
+    res.send("se actualizo  todos los datos el dato ")
+})

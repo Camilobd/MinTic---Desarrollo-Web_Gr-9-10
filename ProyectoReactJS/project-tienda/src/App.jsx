@@ -11,12 +11,18 @@ function App() {
 
   return (
     <>
+    
       <BrowserRouter>
+      
 
         <MenuNavegacion rol={rol} />
         <Navegacion rol={rol} />
 
       </BrowserRouter>
+
+      
+
+      
 
     </>
 

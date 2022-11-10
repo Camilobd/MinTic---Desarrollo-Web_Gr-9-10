@@ -1,38 +1,36 @@
-import JsonData from "../data/UsuariosEjemplo.json";
-import { React } from "react";
+import { useEffect, useState } from "react";
+import { Table } from "../Componentes/Table";
+
+export const ListaUsuarios = () => {
 
 
-export function ListaUsuarios(){
-    const DisplayData=JsonData.map(
-        (info)=>{
-            return(
-                <tr>
-                    <td>{info.user}</td>
-                    <td>{info.pass}</td>
-                    <td>{info.Rol}</td>
-                </tr>
-            )
-        }
-    )
+  const [dataBooks, setDataBooks] = useState([]);
+  
+
+
+  const getData = () => {
+    try {
+      fetch("http://localhost:5000/Productos")
+        .then((resp) => resp.json())
+        .then((resp) => {
+          if (resp.data) {
+            setDataBooks(resp.data);
+          }
+        })
+        .catch((err) => console.log(err));        
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
  
-    return(
-        <div>
-            <table>
-                <thead>
-                    <tr>
-                    <th>Usuario</th>
-                    <th>Contraseña</th>
-                    <th>Rol</th>
-                    </tr>
-                </thead>
-                <tbody> 
-                    
-                    {DisplayData}
-                    
-                </tbody>
-            </table>
-             
-        </div>
-    )
- }
- 
+
+  return (
+    
+
+      <div className="row mt-5">
+        <Table books={dataBooks} />
+      </div>
+   
+  );
+};
