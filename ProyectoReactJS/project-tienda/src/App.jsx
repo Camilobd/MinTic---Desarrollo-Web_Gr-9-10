@@ -12,8 +12,7 @@ function App() {
   return (
     <>
     
-      <BrowserRouter>
-      
+      <BrowserRouter>     
 
         <MenuNavegacion rol={rol} />
         <Navegacion rol={rol} />

@@ -5,10 +5,10 @@ import { Login } from "../Componentes/login.js";
 import { ListaProductosUsuario } from "../Componentes/userListaProductos.js";
 import { CarritoCompras } from "../Componentes/userCarrito.js";
 import { CrearUsuarios } from "../Componentes/AdminCrearUsuarios.js";
-import { CrearProdcutos } from "./AdminCrearProductos.js";
+import { CrearProductos } from "./AdminCrearProductos";
 import { ListaProductosAdmin } from "./AdminListaProductos";
 import { ListaVentas } from "../Componentes/AdminListaVentas";
-import { ListaUsuarios } from "../Componentes/AdminListaUsuarios.js";
+import { ListaUsuarios } from "../Componentes/Administrador/AdminListaUsuarios.js";
 
 
 
@@ -18,7 +18,7 @@ export const Navegacion = ({ rol }) => {
       {rol === "admin" ? (
         <Fragment>
           <Route path="/" element={<Login />} />
-          <Route path="/CrearProductos" element={<CrearProdcutos />} />
+          <Route path="/CrearProductos" element={<CrearProductos />} />
           <Route path="/CrearUsuarios" element={<CrearUsuarios />} />
           <Route path="/ListaUsuarios" element={<ListaUsuarios />} />
           <Route path="/ListaProductosAdmin" element={<ListaProductosAdmin />} />

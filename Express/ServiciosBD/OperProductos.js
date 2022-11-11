@@ -1,18 +1,18 @@
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const express = require("express");
-
 const BD = require("./Conexion/conn.js")
 const esquemaProductos = require("./Modelo/producto.js");
 const { updateOne } = require("./Modelo/producto.js");
 
-const CORS= require("Cors")// incluimos esta linea para controlar el acceso a puertos
+const CORS = require("Cors");// incluimos esta linea para controlar el acceso a puertos
+const producto = require("./Modelo/producto.js");
 
 //Constates para usar express
 const port = 5000;
 const app = express();
 app.use(CORS());
-
+app.use(express.json());
 
 //conctar bd
 mongoose.connect(BD.mongoURL, { useNewUrlParser: true })
@@ -22,12 +22,11 @@ app.listen(port, () => {
     console.log("Ejecuto la app en el puerto " + port)
 })
 
-//get AdminLista de todos los productos
+//get Admin Lista de todos los productos
 
 app.get('/Productos', (req, res) => {
     esquemaProductos.find(function (err, esquemaProductos) {
         if (err) return console.err(err)
-        
         res.status(200).json(esquemaProductos);
         //res.send(esquemaProductos);
     })
@@ -43,8 +42,14 @@ app.get('/ProductosStock', (req, res) => {
 
 })
 
-//post para crear nuevos productos
 
+//crear un metodo par alamacenar un producto
+
+app.post("/GuardarProducto", (req, res) => {
+    nuevoProdcuto = new producto(req.body)
+    esquemaProductos.create(nuevoProdcuto)
+    res.send("Producto Alamacenado correctamente ")
+})
 
 
 //put para actualizar el stock
@@ -61,11 +66,11 @@ app.put('/modificarStock', (req, res) => {
 })
 
 //put para actulziar los productos
-app.post('/modificarAll',( req , res ) =>{
-    const {id, nombre, stock, descripcion,valor, imagen}= req.body
-    console.log(id+" "+nombre+" "+stock+""+descripcion+""+valor+""+imagen);
-    estructProductos.update({id:"1"},{ nombre, stock, descripcion,valor, imagen}, function(err){
+app.put('/modificarAll', (req, res) => {
+    const { id, nombre, stock, descripcion, valor, imagen } = req.body
+    console.log(id + " " + nombre + " " + stock + "" + descripcion + "" + valor + "" + imagen);
+    estructProductos.update({ id: "1" }, { nombre, stock, descripcion, valor, imagen }, function (err) {
         if (err) return console.error(err);
-       }) 
+    })
     res.send("se actualizo  todos los datos el dato ")
 })
