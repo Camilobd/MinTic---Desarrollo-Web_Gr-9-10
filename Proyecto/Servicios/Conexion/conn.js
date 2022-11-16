@@ -1,8 +1,5 @@
-
 module.exports = {
-    mongoURI:
-        "mongodb://localhost:27017/TiendaIndustriales"
-        //cambiar esta linea para conectar con atlas
-};
+    mongoURL: "mongodb://localhost:27017/TiendaIndustriales"
+    //Para trabajar con atlas cambiar por la uri de conexion que proporciona esta herramienta
 
-
+}

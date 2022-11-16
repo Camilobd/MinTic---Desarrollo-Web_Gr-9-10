@@ -30,6 +30,10 @@ export function MenuAdmin() {
             <Link className="nav-link" to={"/NuevoProducto"}>Crear Nuevos productos
             </Link>
           </li>
+          <li className="nav-item">
+            <Link className="nav-link" to={"/ListaVentas"}>Ventas
+            </Link>
+          </li>
         </ul>
       </div>
     </nav>

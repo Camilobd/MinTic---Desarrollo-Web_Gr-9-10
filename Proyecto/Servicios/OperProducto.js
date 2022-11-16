@@ -1,13 +1,21 @@
-var mongoose = require("mongoose");
-var esquemaProductos = require("./modelo/producto.js")
-const UrlBD= require("./Conexion/conn.js")
-const bodyParser = require('body-parser')
-const express= require('express')
-const app = express()
-const port = 5000
+const bodyParser = require("body-parser");
+const mongoose = require("mongoose");
+const express = require("express");
+const BD = require("./Conexion/conn.js")
+const esquemaProductos = require("./Modelo/producto.js");
 
-app.use(bodyParser.json())
-mongoose.connect(UrlBD.mongoURI, { useNewUrlParser: true })
+
+const CORS = require("Cors");// incluimos esta linea para controlar el acceso a puertos
+const producto = require("./Modelo/producto.js");
+
+//Constates para usar express
+const port = 5000;
+const app = express();
+app.use(CORS());
+app.use(express.json());
+
+//conctar bd
+mongoose.connect(BD.mongoURL, { useNewUrlParser: true })
 
 app.listen(port, () =>{
     console.log("Mi aplicacasdion se esta ejecutando en el puerto "+port)
@@ -26,7 +34,7 @@ app.get('/Productos',( req , res ) =>{
 
 
 app.get('/ProductosStock',( req , res ) =>{   
-    
+    console.log("Productos Stock");
     esquemaProductos.find({stock:{$gte:1 }},function(err, esquemaProductos){
         if (err) return console.err(+err);        
         res.send(esquemaProductos)
@@ -34,10 +42,8 @@ app.get('/ProductosStock',( req , res ) =>{
     
 })
 
-
-
-//post para enviar datos o creacion de nuevas entidades
-
-
-
-//put Actualizacion documentos completos
+app.post("/GuardarProducto", (req, res) => {
+    nuevoProdcuto = new producto(req.body)
+    esquemaProductos.create(nuevoProdcuto)
+    res.send("Producto Alamacenado correctamente ")
+})

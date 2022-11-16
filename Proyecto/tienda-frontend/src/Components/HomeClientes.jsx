@@ -4,8 +4,8 @@ export function HomePage(){
 
 return(
   <>
-  <h1>menu Princiapal</h1>
   <div><MenuCliente/></div>
+  <h1>menu Princiapal</h1>
   <h3>Pagina de clientes</h3>  
   </>
 )}
