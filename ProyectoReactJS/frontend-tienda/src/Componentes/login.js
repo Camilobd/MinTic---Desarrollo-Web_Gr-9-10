@@ -39,7 +39,9 @@ export function Login() {
                     </label>
                     <br></br>
                     <br></br>
-                    <button onClick={VerInfo} >Ingresar</button>
+                    <button onClick={VerInfo} >Ingresar
+                    
+                    </button>
 
                 </div>
             </center>
@@ -71,8 +73,10 @@ export function Login() {
         console.log(Validacion(data.user, data.pass))
         if (Validacion(data.user, data.pass)) {
             alert("El usuario ingresado es correcto")
+            return("/")
         } else {
             alert("Por favor verifique los datos ingresados")
+            
         }
     }
 }

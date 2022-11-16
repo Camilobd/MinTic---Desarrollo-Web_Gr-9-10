@@ -1,0 +1,52 @@
+[
+	{
+		"user": "Dacey",
+		"pass": "FGJ81PDR7RT",
+		"Rol": "Cliente"
+	},
+	{
+		"user": "Lucy",
+		"pass": "MQB72KQH8VK",
+		"Rol": "Cliente"
+	},
+	{
+		"user": "Micah",
+		"pass": "MWS37NUY9VG",
+		"Rol": "Cliente"
+	},
+	{
+		"user": "Malachi",
+		"pass": "PKT97NEH1UG",
+		"Rol": "Admin"
+	},
+	{
+		"user": "Lacey",
+		"pass": "BLJ59SNP8NO",
+		"Rol": "Cliente"
+	},
+	{
+		"user": "Shea",
+		"pass": "CFF86WVD5BY",
+		"Rol": "Admin"
+	},
+	{
+		"user": "Otto",
+		"pass": "OQU88KNA2JY",
+		"Rol": "Cliente"
+	},
+	{
+		"user": "Sylvester",
+		"pass": "JRZ75CNN2QX",
+		"Rol": "Cliente"
+	},
+	{
+		"user": "Asher",
+		"pass": "UCL77RGR7HP",
+		"Rol": "Cliente"
+	},
+	{
+		"user": "Quin",
+		"pass": "YPM27PIR1SG",
+		"Rol": "Cliente"
+	}
+]

@@ -24,12 +24,12 @@ export const MenuNavegacion = ({ rol }) => {
             <li className="nav-item">
               <Link className="nav-link" to={"/ListaProductosAdmin"}>Lista productos</Link>
             </li>
-           
+
             <li className="nav-item">
               <Link className="nav-link" to={"/CrearProductos"}>Crear Nuevos productos
               </Link>
             </li>
-            
+
             <li className="nav-item">
               <Link className="nav-link" to={"/ListaVentas"}>Lista de ventas
               </Link>
@@ -54,7 +54,6 @@ export const MenuNavegacion = ({ rol }) => {
 
           </ul>
         )}
-      </div>
-    </nav>
+     x|
   );
 };
